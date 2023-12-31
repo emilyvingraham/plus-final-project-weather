@@ -30,7 +30,7 @@
       </heading>
       <section>
         <div class="header-flex">
-          <div id="city-name">Paris</div>
+          <div id="city-name"></div>
           <div>
             <img
               src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
@@ -38,7 +38,7 @@
               width="100"
               height="100"
               ;
-            /><span class="current-temperature">3°</span>
+            /><span class="current-temperature" id="current-temperature"></span><span class="units">°C</span>
           </div>
         </div>
       </section>
@@ -49,9 +49,9 @@
           <p>Latitude°, Longitude°</p>
         </div>
         <div class="item">
-          <p>Feels Like: <strong>15°</strong></p>
-          <p>Humidity: <strong>74%</strong></p>
-          <p>Wind: <strong>8.75km/h</strong></p>
+          <p>Feels Like: <strong><span id="feels-like"></span></strong></p>
+          <p>Humidity: <strong><span id="humidity"></span></strong></p>
+          <p>Wind: <strong><span id="wind"></span></strong></p>
         </div>
       </section>
       <div>
