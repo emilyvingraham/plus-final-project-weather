@@ -118,4 +118,24 @@ a {
   margin: 10px auto;
   position: relative;
   bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.forecast-day {
+  color: #182941;
+  font-weight: 900;
+}
+
+.forecast-temperatures-max {
+  color: #000000;
+  font-weight: 800;
+  opacity: 0.9;
+  padding-right: 5px;
+}
+
+.forecast-temperatures-min {
+  color: #000000;
+  font-weight: 500;
+  padding-left: 5px;
 }

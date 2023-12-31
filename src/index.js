@@ -4,26 +4,26 @@ function respondToCity(response) {
   let cityElement = document.querySelector('#city-name');
   let feelsLikeElement = document.querySelector('#feels-like');
   let feelsLike = Math.round(response.data.temperature.feels_like);
-  let humidityElement = document.querySelector("#humidity");
+  let humidityElement = document.querySelector('#humidity');
   let humidity = response.data.temperature.humidity;
-  let windElement = document.querySelector("#wind");
+  let windElement = document.querySelector('#wind');
   let wind = Math.round(response.data.wind.speed);
-  let latitudeElement = document.querySelector("#latitude");
+  let latitudeElement = document.querySelector('#latitude');
   let latitude = response.data.coordinates.latitude.toFixed(2);
-  let longitudeElement = document.querySelector("#longitude");
+  let longitudeElement = document.querySelector('#longitude');
   let longitude = response.data.coordinates.longitude.toFixed(2);
-  let countryElement = document.querySelector("#country");
-  let descriptionElement = document.querySelector("#description");
+  let countryElement = document.querySelector('#country');
+  let descriptionElement = document.querySelector('#description');
 
   console.log(response.data);
 
   temperatureElement.innerHTML = `${temperature}`;
   cityElement.innerHTML = response.data.city;
-  feelsLikeElement.innerHTML = `${feelsLike}°`
-  humidityElement.innerHTML = `${humidity}%`
+  feelsLikeElement.innerHTML = `${feelsLike}°`;
+  humidityElement.innerHTML = `${humidity}%`;
   windElement.innerHTML = `${wind}km/h`;
-  latitudeElement.innerHTML = `${latitude}°, `
-  longitudeElement.innerHTML = `${longitude}°`
+  latitudeElement.innerHTML = `${latitude}°, `;
+  longitudeElement.innerHTML = `${longitude}°`;
   countryElement.innerHTML = response.data.country;
   descriptionElement.innerHTML = response.data.condition.description;
 }
@@ -41,7 +41,27 @@ function searchForCity(event) {
   updateCityName(searchInput.value);
 }
 
+function updateForecast() {
+    let days = ["Sun", "Mon", "Tues", "Wed", "Thur"];
+    let weekForecast = "";
+    days.forEach(function(day) {
+        weekForecast = weekForecast + 
+        `<div class="forecast-day">Day
+                    <div class="forecast-icon">👽
+                        <div class="forecast-temperatures">
+                            <span class="forecast-temperatures-max">18°</span>
+                            <span class="forecast-temperatures-min">10°</span>
+                        </div>
+                    </div>
+                </div>`;
+
+    })
+    let forecastElement = document.querySelector("#forecast");
+    forecastElement.innerHTML = weekForecast;
+}
+
 let formElement = document.querySelector('#form');
 formElement.addEventListener('submit', searchForCity);
 
+updateForecast();
 updateCityName('Denver');
