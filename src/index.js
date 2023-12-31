@@ -8,6 +8,12 @@ function respondToCity(response) {
   let humidity = response.data.temperature.humidity;
   let windElement = document.querySelector("#wind");
   let wind = Math.round(response.data.wind.speed);
+  let latitudeElement = document.querySelector("#latitude");
+  let latitude = response.data.coordinates.latitude.toFixed(2);
+  let longitudeElement = document.querySelector("#longitude");
+  let longitude = response.data.coordinates.longitude.toFixed(2);
+  let countryElement = document.querySelector("#country");
+  let descriptionElement = document.querySelector("#description");
 
   console.log(response.data);
 
@@ -16,6 +22,10 @@ function respondToCity(response) {
   feelsLikeElement.innerHTML = `${feelsLike}°`
   humidityElement.innerHTML = `${humidity}%`
   windElement.innerHTML = `${wind}km/h`;
+  latitudeElement.innerHTML = `${latitude}°, `
+  longitudeElement.innerHTML = `${longitude}°`
+  countryElement.innerHTML = response.data.country;
+  descriptionElement.innerHTML = response.data.condition.description;
 }
 
 function updateCityName(city) {
