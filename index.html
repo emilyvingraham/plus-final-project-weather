@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather Application</title>
     <link rel="stylesheet" href="src/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;0,9..40,1000;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500;1,9..40,600;1,9..40,700;1,9..40,800;1,9..40,900;1,9..40,1000&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="container">
@@ -15,36 +21,37 @@
             autofocus
             autocomplete="off"
             placeholder="Enter a city..."
+            class="input-text"
           />
-          <input type="submit" value="Search" />
+          <input type="submit" value="Search" class="input-submit"/>
         </form>
       </heading>
       <section>
-        <div>
-          <span>Paris</span>
-          <span
-            ><img
+        <div class="header-flex">
+          <div>Paris</div>
+          <div>
+            <img
               src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
               alt="icon"
-              width="42"
-          /></span>
-          <span>3°</span>
+              width="100" height="100";
+            /><span class="current-temperature">3°</span>
+          </div>
         </div>
       </section>
-      <section>
-        <div>
+      <section class="flex-container">
+        <div class="item">
           <span>Sunday 11:08</span><span>, broken clouds</span>
           <p>Country</p>
           <p>Latitude°, Longitude°</p>
         </div>
-        <div>
+        <div class="item">
           <p>Feels Like: <strong>15°</strong></p>
-          <p>Humidity:<strong>74%</strong></p>
-          <p>Wind:<strong>8.75km/h</strong></p>
+          <p>Humidity: <strong>74%</strong></p>
+          <p>Wind: <strong>8.75km/h</strong></p>
         </div>
       </section>
-      <div class="footer">
-        <footer>
+      <div>
+        <footer class="footer">
           This project was coded by
           <a href="https://github.com/emilyvingraham">Emily Ingraham</a>, is
           <a href="https://github.com/emilyvingraham/plus-final-project-weather"

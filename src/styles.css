@@ -1,8 +1,107 @@
+* {
+  box-sizing: border-box;
+  font-family: 'DM Sans', sans-serif;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body {
+  background-color: #fbfbfb;
+}
+
 .container {
-    border: 1px solid black;
-    padding: 20px;
-    border-radius: 10px;
-    width: 50%;
-    display: block;
-    margin: 0 auto;
+  border: 1px solid transparent;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  display: block;
+  margin: 10px auto;
+}
+.header-flex {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  font-weight: 900;
+  font-size: 40px;
+}
+
+img {
+  position: relative;
+  bottom: 30px;
+}
+.current-temperature {
+  position: relative;
+  bottom: 60px;
+}
+.flex-container {
+  display: flex;
+  background-color: transparent;
+  border-radius: 10px;
+  position: relative;
+  bottom: 20px;
+}
+
+.item {
+  width: 150px;
+  height: 50px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: radial-gradient(
+    590px at 8.2% 13.8%,
+    rgb(18, 35, 60) 0%,
+    rgb(187, 187, 187) 90%
+  );
+  margin: 10px auto;
+  padding: 5px;
+  color: #fbfbfb;
+  text-align: center;
+  display: block;
+  font-size: 10px;
+  justify-content: center;
+  position: relative;
+  bottom: 20px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.footer {
+  font-size: 10px;
+  text-align: center;
+}
+a {
+  color: #1d5d9b;
+}
+
+form {
+  text-align: center;
+}
+.input-text {
+  width: 60%;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px solid #182941;
+  padding: 10px;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.input-submit {
+  width: 60px;
+  height: 30px;
+  border-radius: 10px;
+  margin: 10px auto;
+  border: 0.5px solid #182941;
+  background: radial-gradient(
+    590px at 8.2% 13.8%,
+    rgb(18, 35, 60) 0%,
+    rgb(187, 187, 187) 90%
+  );
+  color: white;
+  cursor: pointer;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+}
+.input-submit:hover {
+  transition: solid 150ms ease-in-out;
+  color: #fbfbfb;
+  background: #1d5d9b;
 }
