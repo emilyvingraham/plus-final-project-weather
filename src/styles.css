@@ -110,3 +110,12 @@ a {
   color: #fbfbfb;
   background: #1d5d9b;
 }
+
+.forecast {
+  font-size: 12px;
+  text-align: center;
+  line-height: 20px;
+  margin: 10px auto;
+  position: relative;
+  bottom: 20px;
+}
