@@ -30,7 +30,7 @@ function respondToCity(response) {
 
 function updateCityName(city) {
   let apiKey = '47ce0ocdabaf4a2e81b031bb9t47a0e0';
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
   axios.get(apiUrl).then(respondToCity);
 }
 function searchForCity(event) {
