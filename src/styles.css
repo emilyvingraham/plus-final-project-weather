@@ -27,17 +27,29 @@ body {
   font-size: 40px;
 }
 
-img {
+.icon {
+  padding: 0px;
+  margin: 0px;
   position: relative;
-  bottom: 30px;
+  bottom: 10px;
+  left: 25px;
 }
+
+.city-name {
+  color: #000000;
+  position: relative;
+  right: 20px;
+}
+
 .current-temperature {
   position: relative;
-  bottom: 60px;
+  bottom: 110px;
+  right: 10px;
 }
 .units {
   position: relative;
-  bottom: 75px;
+  bottom: 125px;
+  right: 5px;
   font-size: 20px;
 }
 .flex-container {
@@ -45,12 +57,12 @@ img {
   background-color: transparent;
   border-radius: 10px;
   position: relative;
-  bottom: 20px;
+  bottom: 50px;
 }
 
 .item {
-  width: 150px;
-  height: 50px;
+  width: 250px;
+  height: 70px;
   border: 1px solid transparent;
   border-radius: 10px;
   background: radial-gradient(
@@ -63,11 +75,12 @@ img {
   color: #fbfbfb;
   text-align: center;
   display: block;
-  font-size: 10px;
+  font-size: 14px;
   justify-content: center;
   position: relative;
   bottom: 20px;
   box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+  line-height: 20px;
 }
 
 .footer {
@@ -112,12 +125,12 @@ a {
 }
 
 .forecast {
-  font-size: 12px;
+  font-size: 16px;
   text-align: center;
   line-height: 20px;
   margin: 10px auto;
   position: relative;
-  bottom: 20px;
+  bottom: 40px;
   display: flex;
   justify-content: space-between;
 }

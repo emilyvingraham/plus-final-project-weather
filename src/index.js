@@ -14,6 +14,7 @@ function respondToCity(response) {
   let longitude = response.data.coordinates.longitude.toFixed(2);
   let countryElement = document.querySelector('#country');
   let descriptionElement = document.querySelector('#description');
+  let iconElement = document.querySelector('#icon');
 
   console.log(response.data);
 
@@ -26,6 +27,7 @@ function respondToCity(response) {
   longitudeElement.innerHTML = `${longitude}°`;
   countryElement.innerHTML = response.data.country;
   descriptionElement.innerHTML = response.data.condition.description;
+  iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="icon"/>`;
 }
 
 function updateCityName(city) {
@@ -41,27 +43,37 @@ function searchForCity(event) {
   updateCityName(searchInput.value);
 }
 
-function updateForecast() {
-    let days = ["Sun", "Mon", "Tues", "Wed", "Thur"];
-    let weekForecast = "";
-    days.forEach(function(day) {
-        weekForecast = weekForecast + 
-        `<div class="forecast-day">Day
-                    <div class="forecast-icon">👽
-                        <div class="forecast-temperatures">
-                            <span class="forecast-temperatures-max">18°</span>
-                            <span class="forecast-temperatures-min">10°</span>
+function searchForForecast(city) {
+  let apiKey = '47ce0ocdabaf4a2e81b031bb9t47a0e0';
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(updateForecast);
+}
+
+function updateForecast(response) {
+  console.log(response.data);
+
+  let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur'];
+  let weekForecast = '';
+  days.forEach(function (day) {
+    weekForecast =
+      weekForecast +
+      `<div class="forecast-day">${day}
+        <div class="forecast-icon">👽
+        <div class="forecast-temperatures">
+        <span class="forecast-temperatures-max">18°</span>
+        <span class="forecast-temperatures-min">10°</span>
                         </div>
                     </div>
                 </div>`;
-
-    })
-    let forecastElement = document.querySelector("#forecast");
-    forecastElement.innerHTML = weekForecast;
+  });
+  let forecastElement = document.querySelector('#forecast');
+  forecastElement.innerHTML = weekForecast;
 }
 
 let formElement = document.querySelector('#form');
 formElement.addEventListener('submit', searchForCity);
 
-updateForecast();
+//placeholder for onload behavior
 updateCityName('Denver');
+
+searchForForecast('Lisbon');
