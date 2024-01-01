@@ -17,21 +17,20 @@ function respondToCity(response) {
   let iconElement = document.querySelector('#icon');
   let dateElement = document.querySelector('#date-and-time');
   let now = new Date();
-  let days = ["Sun.", "Mon.", "Tues.", "Wed.", "Thur.", "Fri.", "Sat."];
-  let day = days[now.getDay()]
+  let days = ['Sun.', 'Mon.', 'Tues.', 'Wed.', 'Thur.', 'Fri.', 'Sat.'];
+  let day = days[now.getDay()];
   let minutes = now.getMinutes();
   if (minutes < 10) {
-    minutes = `0${minutes}`
+    minutes = `0${minutes}`;
   } else {
     minutes;
   }
   let hours = now.getHours();
   if (hours < 10) {
-    hours = `0${hours}`
+    hours = `0${hours}`;
   } else {
     hours;
   }
-  
 
   temperatureElement.innerHTML = `${temperature}`;
   cityElement.innerHTML = response.data.city;
@@ -43,7 +42,7 @@ function respondToCity(response) {
   countryElement.innerHTML = response.data.country;
   descriptionElement.innerHTML = response.data.condition.description;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="icon"/>`;
-  dateElement.innerHTML = `${day} ${hours}:${minutes}, `
+  dateElement.innerHTML = `${day} ${hours}:${minutes}, `;
 }
 
 function updateCityName(city) {
