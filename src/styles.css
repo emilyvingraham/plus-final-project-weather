@@ -125,7 +125,7 @@ a {
 }
 
 .forecast {
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   line-height: 20px;
   margin: 10px auto;
@@ -138,6 +138,10 @@ a {
 .forecast-day {
   color: #182941;
   font-weight: 900;
+}
+
+.forecast-temperatures {
+  font-size: 14px;
 }
 
 .forecast-temperatures-max {
