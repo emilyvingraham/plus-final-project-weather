@@ -15,7 +15,7 @@ body {
   background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   padding: 20px;
   border-radius: 10px;
-  width: 50%;
+  width: 70%;
   display: block;
   margin: 10px auto;
 }
@@ -155,4 +155,11 @@ a {
   color: #000000;
   font-weight: 500;
   padding-left: 5px;
+}
+
+.forecast-icon {
+  width: 46px;
+  height: 46px;
+  display: block;
+  margin: 0 auto;
 }

@@ -43,6 +43,8 @@ function respondToCity(response) {
   descriptionElement.innerHTML = response.data.condition.description;
   iconElement.innerHTML = `<img src="${response.data.condition.icon_url}" class="icon"/>`;
   dateElement.innerHTML = `${day} ${hours}:${minutes}, `;
+
+  searchForForecast(response.data.city);
 }
 
 function updateCityName(city) {
@@ -64,31 +66,42 @@ function searchForForecast(city) {
   axios.get(apiUrl).then(updateForecast);
 }
 
+function formatForecastDay(timestamp) {
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let date = new Date(timestamp * 1000);
+
+  return days[date.getDay()]
+
+}
+
 function updateForecast(response) {
   console.log(response.data);
 
-  let days = ['Sun', 'Mon', 'Tues', 'Wed', 'Thur'];
   let weekForecast = '';
-  days.forEach(function (day) {
-    weekForecast =
-      weekForecast +
-      `<div class="forecast-day">${day}
-        <div class="forecast-icon">👽
-        <div class="forecast-temperatures">
-        <span class="forecast-temperatures-max">18°</span>
-        <span class="forecast-temperatures-min">10°</span>
-                        </div>
-                    </div>
-                </div>`;
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      weekForecast =
+        weekForecast +
+        `<div class="forecast-day">${formatForecastDay(day.time)}
+          <div><img class="forecast-icon" src="${day.condition.icon_url}"
+          <div class="forecast-temperatures">
+          <span class="forecast-temperatures-max">${Math.round(
+            day.temperature.maximum
+          )}°</span>
+          <span class="forecast-temperatures-min">${Math.round(
+            day.temperature.minimum
+          )}°</span>
+                          </div>
+                      </div>
+                  </div>`;
+    }
   });
   let forecastElement = document.querySelector('#forecast');
   forecastElement.innerHTML = weekForecast;
 }
 
+
 let formElement = document.querySelector('#form');
 formElement.addEventListener('submit', searchForCity);
 
-//placeholder for onload behavior
 updateCityName('Denver');
-
-searchForForecast('Lisbon');
