@@ -75,7 +75,7 @@ function formatForecastDay(timestamp) {
 }
 
 function updateForecast(response) {
-  console.log(response.data);
+  
 
   let weekForecast = '';
   response.data.daily.forEach(function (day, index) {
