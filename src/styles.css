@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #15263E;
+  background-color: #15263e;
 }
 
 .container {
@@ -15,7 +15,7 @@ body {
   background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   padding: 20px;
   border-radius: 10px;
-  width: 70%;
+  width: 50%;
   display: block;
   margin: 30px auto;
 }
